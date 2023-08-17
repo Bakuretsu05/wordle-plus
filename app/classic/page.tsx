@@ -2,7 +2,7 @@
 
 import Wordle from "@/components/Wordle/Wordle";
 import { useState } from "react";
-import { useWordle } from "../useWordle";
+import { useWordle } from "../../components/Wordle/useWordle";
 
 export default function ClassicPage() {
   const [input, setInput] = useState("");
