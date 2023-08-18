@@ -1,4 +1,4 @@
-import { LetterType } from "@/components/Wordle/wordleType";
+import { LetterType } from "@/components/WordleApp/wordleType";
 import Box from "./Box";
 
 interface PropsType {

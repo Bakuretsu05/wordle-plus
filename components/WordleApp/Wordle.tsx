@@ -1,4 +1,4 @@
-import { WordleType } from "@/components/Wordle/wordleType";
+import { WordleType } from "@/components/WordleApp/wordleType";
 import Row from "./Row";
 
 interface Props {
