@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useWordle } from "@/components/WordleApp/useWordle";
 import { useWordleInput } from "@/components/WordleApp/useWordleIput";
 import { useError } from "@/hooks/useError";
+import VirtualKeyboard from "../VirtualKeyboard/VirtualKeyboard";
 
 const getRandomWord = (wordlist: string[]): string => {
   return wordlist[Math.floor(Math.random() * wordlist.length)].toUpperCase();
@@ -49,6 +50,11 @@ export default function WordleApp({ wordlist }: PropsType) {
         <h2 className="fixed top-20 left-50 text-red-500 text-3xl">{error}</h2>
       )}
       <Wordle wordle={wordle} currentInput={input} currentRow={currentRow} />
+      <VirtualKeyboard
+        handlePress={() => console.log("hellow pressed")}
+        wordle={wordle}
+        currentRow={currentRow}
+      />
     </>
   );
 }

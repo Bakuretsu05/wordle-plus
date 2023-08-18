@@ -1,4 +1,4 @@
-import WordleApp from "@/components/WordleApp/WordleApp";
+import WordleApp from "@/components/WordleApp";
 import { wordlist_classic } from "../../app/classic/classic-wordle-words";
 
 export default function ClassicPage() {
