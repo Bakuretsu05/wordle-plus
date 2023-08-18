@@ -30,29 +30,22 @@ const formatWordle = (input: string, word: string): LetterType[] => {
   return newWordle;
 };
 
-export function useWordle(word: string, wordlist: string[], rows: number = 6) {
+export function useWordle(wordP: string | (() => string), rows: number = 6) {
+  const [word] = useState(
+    typeof wordP === "function" ? wordP().toUpperCase() : wordP.toUpperCase()
+  );
   const [wordle, setWordle] = useState(() =>
     initializeWordle(word.length, rows)
   );
   const [currentRow, setCurrentRow] = useState(1);
 
   const enterWordle = (input: string) => {
-    return new Promise((resolve, reject) => {
-      if (
-        input.length !== word.length ||
-        !wordlist.includes(input.toLowerCase())
-      ) {
-        reject("word not found"); //! throw a error modal here
-      } else {
-        setWordle((prevWordle) => {
-          const newWordle = [...prevWordle];
-          newWordle[currentRow - 1] = formatWordle(input, word);
-          return newWordle;
-        });
-        setCurrentRow((prevRow) => prevRow + 1);
-        resolve("success");
-      }
+    setWordle((prevWordle) => {
+      const newWordle = [...prevWordle];
+      newWordle[currentRow - 1] = formatWordle(input, word);
+      return newWordle;
     });
+    setCurrentRow((prevRow) => prevRow + 1);
   };
 
   return { wordle, currentRow, enterWordle };

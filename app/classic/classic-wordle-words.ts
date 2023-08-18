@@ -1,4 +1,4 @@
-export const wordlist = [
+export const wordlist_classic = [
   "aahed",
   "aalii",
   "aapas",
@@ -14856,6 +14856,8 @@ export const wordlist = [
   "zymic",
 ];
 
-export function getRandomWord() {
-  wordlist[Math.floor(Math.random() * wordlist.length)].toUpperCase();
+export function getRandomWord(): string {
+  return wordlist_classic[
+    Math.floor(Math.random() * wordlist_classic.length)
+  ].toUpperCase();
 }

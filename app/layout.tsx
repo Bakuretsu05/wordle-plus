@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.className} h-screen w-screen bg-secondary flex flex-col items-center justify-center`}
+        className={`${openSans.className} h-screen w-screen bg-primary flex flex-col items-center justify-center`}
       >
         {children}
       </body>
